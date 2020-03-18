@@ -36,6 +36,7 @@ cs:
       organisation: Organizace
       user: Uživatel
       comment: Komentář
+      request: Požadavek
     attributes:
       volunteer:
         first_name: Jméno
@@ -65,6 +66,21 @@ cs:
       user:
         first_name: Jméno
         last_name: Příjmení
+      request:
+        text: Text
+        creator: Vytvořil
+        closed: Uzavřel
+        coordinator: Koordinátor
+        organisation: Organizace
+        required_volunteer_count: Počet požadovanych dobrovolníků
+        state: Stav
+        closed_state: Uzavřeno stavem
+        subscriber: Odběratel
+        subscriber_phone: Telefon odběratele
+        closed_note: Poznámka k uzavření
+        fullfillment_date: Datum splnění
+        closed_at: Datum uzavření
+        state_last_updated_at: Stav naposledy aktualizován
     errors:
       format: "%{attribute} %{message}"
       messages:
