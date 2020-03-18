@@ -4,8 +4,8 @@ FactoryBot.define do
   factory :volunteer do
     first_name { 'Firstname' }
     last_name { 'Lastname' }
-    phone { '+420 444 444 444' }
-    email { 'test@example.com' }
+    phone { "+420#{rand(111111111...999999999)}" }
+    email { FFaker::Internet.email }
     street { 'Main Street' }
     street_number { '555' }
     city { 'Prague' }

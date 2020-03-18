@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Organisation < ApplicationRecord
   resourcify
 
@@ -8,6 +10,7 @@ class Organisation < ApplicationRecord
            class_name: :User,
            through: :roles,
            source: :users
+  has_many :requests
 
   # Validations
   validates :name, presence: true

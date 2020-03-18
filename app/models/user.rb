@@ -16,6 +16,9 @@ class User < ApplicationRecord
            through: :roles,
            source: :resource,
            source_type: :Organisation
+  has_many :created_requests, class_name: 'Request', foreign_key: :created_by_id
+  has_many :closed_requests, class_name: 'Request', foreign_key: :closed_by_id
+  has_many :requests, class_name: 'Request', foreign_key: :coordinator_id
 
   # Validations
   validates :first_name, presence: true
@@ -33,5 +36,9 @@ class User < ApplicationRecord
     User.joins(:roles).where(roles: { name: :coordinator,
                                       resource_type: :Organisation,
                                       resource_id: coordinating_organisation_ids })
+  end
+
+  def coordinator_organisation_requests
+    Request.where(organisation_id: coordinating_organisations.select(:id))
   end
 end
